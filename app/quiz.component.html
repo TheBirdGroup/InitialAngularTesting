@@ -1,0 +1,11 @@
+<h3>You have mediaType {{mediaID}}, andf the quiz for it:</h3>
+
+ <img src="http://www.ragefacecomics.com/faces/large/fuck-yeah-l.png" alt="Smiley face" height="300" width="300"> 
+
+<div class="grid grid-pad">
+  <div *ngFor="#current of mediaTypes" (click)="gotoMediaType(current.mediaType)" class="col-1-4">
+    <div class="module hero">
+      <h4>{{current.name}}</h4>
+    </div>
+  </div>
+</div>

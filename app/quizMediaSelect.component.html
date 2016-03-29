@@ -1,0 +1,8 @@
+<h3>Select media type</h3>
+<div class="grid grid-pad">
+  <div *ngFor="#current of mediaTypes" (click)="gotoMediaType(current.mediaType)" class="col-1-4">
+    <div class="module hero">
+      <h4>{{current.name}}</h4>
+    </div>
+  </div>
+</div>
