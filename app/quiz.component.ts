@@ -1,5 +1,5 @@
 import { Component, OnInit } from 'angular2/core';
-import {RouteParams} from 'angular2/router';
+import { Router, RouteParams } from 'angular2/router';
 
 
 @Component({
@@ -9,17 +9,46 @@ import {RouteParams} from 'angular2/router';
 })
 export class QuizComponent implements OnInit {
 
+	someValue = 0;
+
     mediaID = 0;
 
+	buttonDisabled = true;
+
+	randomName = "Greger";
+
     constructor(
-      private _routeParams: RouteParams) {
+      private _routeParams: RouteParams,
+  	  private _router: Router) {
     }
 
     ngOnInit() {
         let id = +this._routeParams.get('id');
         this.mediaID = id;
+
+		if(!(id == 1 || id == 2 || id == 3)){
+
+			this._router.navigateByUrl(`dashboard`);
+
+		}
+
     }
 
+	incrementSomeValue(){
+
+
+		this.someValue = this.someValue + 1;
+		console.log("incrementSomeValue: "+this.someValue);
+
+	}
+
+	randomOnClick(){
+
+		console.log("We clicked it!");
+
+	}
+
+	//not needed?
     goBack() {
         console.log("ha det bra");
         window.history.back();
