@@ -3,7 +3,9 @@
 <h4 (click)="randomOnClick()">ABCD{{incrementSomeValue()}}</h4>
 
 <input type="text" [(ngModel)]="randomName" (focus)="randomOnClick()"><br>
+<input type="text" [ngModel]="randomName" (ngModelChange)="toUpper($event)" (focus)="randomOnClick()"><br>
 My name is {{randomName}}<br>
+<div *ngIf="heroIsJust()">This is the one and only hero</div>
 
 <img src="http://www.ragefacecomics.com/faces/large/fuck-yeah-l.png" alt="Smiley face" height="300" width="300">
 

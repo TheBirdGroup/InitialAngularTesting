@@ -15,7 +15,7 @@ export class QuizComponent implements OnInit {
 
 	buttonDisabled = true;
 
-	randomName = "Greger";
+	randomName = "Grege";
 
     constructor(
       private _routeParams: RouteParams,
@@ -33,6 +33,22 @@ export class QuizComponent implements OnInit {
 		}
 
     }
+
+	toUpper(name:string){
+
+		this.randomName = name.toUpperCase();
+
+	}
+
+	heroIsJust(){
+
+		if(this.randomName == "Greger" || this.randomName == "GREGER"){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
 
 	incrementSomeValue(){
 
