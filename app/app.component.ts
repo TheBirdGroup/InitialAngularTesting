@@ -9,6 +9,8 @@ import { QuizMediaSelectComponent } from './quizMediaSelect.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { QuizComponent } from './quiz.component';
 
+import { BottomBarComponent } from './bottom-bar.component';
+
 @Component({
 	selector: 'birdid-idclient-main',
 	template: `
@@ -19,9 +21,13 @@ import { QuizComponent } from './quiz.component';
 		<a [routerLink]="['Heroes']">Heroes</a>
 	  </nav>
 	  <router-outlet></router-outlet>
+	  <birdid-bottom-bar></birdid-bottom-bar>
 	`,
 	styleUrls: ['app/app.component.css'],
-	directives: [ROUTER_DIRECTIVES],
+	directives: [
+		ROUTER_DIRECTIVES,
+		BottomBarComponent
+	],
 	providers: [
 	  ROUTER_PROVIDERS,
 	  HeroService
