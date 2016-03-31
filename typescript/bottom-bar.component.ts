@@ -2,7 +2,7 @@ import { Component }       from 'angular2/core';
 
 @Component({
 	selector: 'birdid-bottom-bar',
-	template: '<h2>Developed by Hemb Studios (and a few slaves)</h2><br>Team: {{developers}}'
+	template: '<h2>Developed by Hemb Studios (and a few slaves)</h2><br>TeamMZ: {{developers}}'
 })
 
 export class BottomBarComponent{
