@@ -7,6 +7,6 @@ import { Component }       from 'angular2/core';
 
 export class BottomBarComponent{
 
-	developers:string = "Greger and his crew"
+	developers:string = "Greger and his crew yoloswag"
 
 }
