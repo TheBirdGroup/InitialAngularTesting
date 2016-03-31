@@ -3,23 +3,36 @@ import { Router } from 'angular2/router';
 
 import { QuizSettings } from './mock-quizSettings';
 
+import { QuizSettingsService } from './quiz-settings.service';
+
+
 
 @Component({
   selector: 'birdid-media-select',
   templateUrl: 'app/quizMediaSelect.component.html',
-  styleUrls:  ['app/dashboard.component.css']
+  styleUrls:  ['app/dashboard.component.css'],
+  providers: [
+	  QuizSettingsService
+  ]
 })
 
 
 export class QuizMediaSelectComponent implements OnInit {
 
-    mediaTypes = QuizSettings;
+    mediaTypes = [];
 
 	constructor(
+	  private _quizSettingsService: QuizSettingsService,
 	  private _router: Router) {
 	}
 
 	ngOnInit() {
+
+
+
+		this._quizSettingsService.getQuizSettings().then(mediaTypes => this.mediaTypes = mediaTypes);
+		//switch lines for slow responce testing
+		//this._quizSettingsService.getQuizSettingsSlow().then(mediaTypes => this.mediaTypes = mediaTypes);
 
 	}
 
