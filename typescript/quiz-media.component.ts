@@ -10,6 +10,8 @@ import { Router, RouteParams } from 'angular2/router';
 })
 export class QuizMediaComponent implements OnInit {
 
+    imageURL = "images/testMedia.jpg";
+
 
     constructor(
       private _routeParams: RouteParams,
@@ -17,6 +19,14 @@ export class QuizMediaComponent implements OnInit {
     }
 
     ngOnInit() {
+
+    }
+
+    changeImage(){
+
+        console.log("changing image");
+        //this.imageURL = "images/testMedia2.jpg";
+        this.imageURL = "https://hembstudios.no//birdid/IDprogram/getMedia.php?token="+Math.random();
 
     }
 
