@@ -2,12 +2,13 @@ import { Component, OnInit } from 'angular2/core';
 import { Router, RouteParams } from 'angular2/router';
 
 import {AutoGrowDirective} from './auto-grow.directive';
+import {QuizMediaComponent} from './quiz-media.component';
 
 @Component({
   selector: 'birdid-quiz',
   templateUrl: 'app/quiz.component.html',
   styleUrls: ['app/hero-detail.component.css'],
-  directives: [AutoGrowDirective]
+  directives: [AutoGrowDirective, QuizMediaComponent]
 })
 export class QuizComponent implements OnInit {
 
