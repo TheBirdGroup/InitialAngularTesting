@@ -4,13 +4,19 @@ import { Router, RouteParams } from 'angular2/router';
 import {AutoGrowDirective} from './auto-grow.directive';
 import {QuizMediaComponent} from './quiz-media.component';
 
+import { QuizQuestion } from './quizQuestion';
+import { QuizQuestionsService } from './quiz-questions.service';
+
 //import {UnlessDirective} from './unless.directive';
 
 @Component({
   selector: 'birdid-quiz',
   templateUrl: 'app/quiz.component.html',
   styleUrls: ['app/quiz.component.css'],
-  directives: [AutoGrowDirective, QuizMediaComponent]
+  directives: [AutoGrowDirective, QuizMediaComponent],
+  providers: [
+      QuizQuestionsService
+  ]
 })
 export class QuizComponent implements OnInit {
 
@@ -27,7 +33,10 @@ export class QuizComponent implements OnInit {
 
     mediaLoadedMessage = "Not loaded";
 
+    quizQuestions = [];
+
     constructor(
+      private _quizQuestionsService: QuizQuestionsService,
       private _routeParams: RouteParams,
   	  private _router: Router) {
     }
@@ -42,7 +51,25 @@ export class QuizComponent implements OnInit {
 
 		}
 
+
+        this._quizQuestionsService.getQuizQuestions().then(this.questionsLoaded);
+        //this._quizQuestionsService.getQuizQuestions().then(quizQuestions => this.quizQuestions = quizQuestions);
+
+        console.log("quizQuestions: ", this.quizQuestions);
+
+
         this.mediaID = 6028;
+
+
+
+    }
+
+    //not working? THIS IS NULL!
+    questionsLoaded(aruments:QuizQuestion[]){
+
+        console.log(this);
+        //this.quizQuestions = aruments;
+        console.log("quizQuestions2: ", aruments);
 
     }
 

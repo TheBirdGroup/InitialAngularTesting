@@ -39,7 +39,7 @@ export class QuizMediaComponent implements OnInit {
 
     emitMediaLoaded(){
 
-        console.log("delayed execution, this.mediaLoadedEvent: ", this.mediaLoadedEvent);
+        //console.log("delayed execution, this.mediaLoadedEvent: ", this.mediaLoadedEvent);
         this.mediaLoadedEvent.emit("MediaLoaded: "+ this.imageURL);
 
     }
