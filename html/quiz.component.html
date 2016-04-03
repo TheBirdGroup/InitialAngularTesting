@@ -1,8 +1,9 @@
-<h3>You have mediaType {{mediaID}}, andf the quiz for it YOLO:</h3>
+<h3>You have mediaType {{mediaTypeID}}, andf the quiz for it YOLO:</h3>
 
 
+{{mediaLoadedMessage}}<br>
+<birdid-quiz-media [usingMediaID]="mediaID" (mediaLoadedEvent)="mediaLoadedMessage = $event"></birdid-quiz-media>
 
-|<birdid-quiz-media></birdid-quiz-media>|
 
 
 
@@ -13,6 +14,8 @@
 <input type="text" [ngModel]="randomName" (ngModelChange)="toUpper($event)" (focus)="randomOnClick()"><br>
 My name is {{randomName}}<br>
 <div *ngIf="heroIsJust()">This is the one and only hero</div>
+<span [class.extraStyle]="usingExtraStyle" >This is just some random text</span>
+<button (click)="changeTextStyleClass()" >Change text style!</button>
 
 <img src="http://www.ragefacecomics.com/faces/large/fuck-yeah-l.png" alt="Smiley face" height="300" width="300">
 
