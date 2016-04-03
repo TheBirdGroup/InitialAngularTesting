@@ -4,6 +4,8 @@ import { Router, RouteParams } from 'angular2/router';
 import {AutoGrowDirective} from './auto-grow.directive';
 import {QuizMediaComponent} from './quiz-media.component';
 
+//import {UnlessDirective} from './unless.directive';
+
 @Component({
   selector: 'birdid-quiz',
   templateUrl: 'app/quiz.component.html',
@@ -71,6 +73,7 @@ export class QuizComponent implements OnInit {
 		}
 
 	}
+
 
 	incrementSomeValue(){
 

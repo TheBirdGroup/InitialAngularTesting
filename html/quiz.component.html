@@ -10,10 +10,13 @@
 
 <h4 (click)="randomOnClick()">ABCDEFG{{incrementSomeValue()}}</h4>
 
+<input type="text" [(ngModel)]="randomName" (focus)="randomOnClick()" autoGrow [expandMaxSize]="'1000'"><br>
 <input type="text" [(ngModel)]="randomName" (focus)="randomOnClick()" autoGrow><br>
 <input type="text" [ngModel]="randomName" (ngModelChange)="toUpper($event)" (focus)="randomOnClick()"><br>
 My name is {{randomName}}<br>
 <div *ngIf="heroIsJust()">This is the one and only hero</div>
+<div *ngIf="!heroIsJust()">This is an abomination of an hero</div>
+
 <span [class.extraStyle]="usingExtraStyle" >This is just some random text</span>
 <button (click)="changeTextStyleClass()" >Change text style!</button>
 
