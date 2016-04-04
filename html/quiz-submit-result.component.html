@@ -1,0 +1,16 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+	<br>
+	<lable for="email">Email</lable><br>
+	<input ngControl="email" type="text" id="email" required>
+	<br>
+	<lable for="name">Name</lable><br>
+	<input ngControl="name" type="text" id="name" required>
+	<br>
+	<lable for="score">Score</lable><br>
+	<input ngControl="score" type="text" id="score" required>
+	<br>
+	<button type="submit">Submit</button>
+	<br>
+	{{formInformation | json}}
+	<br>
+</form>

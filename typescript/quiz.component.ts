@@ -3,6 +3,7 @@ import { Router, RouteParams } from 'angular2/router';
 
 import {AutoGrowDirective} from './auto-grow.directive';
 import {QuizMediaComponent} from './quiz-media.component';
+import {QuizSumbitResultComponent} from './quiz-submit-result.component';
 
 import { QuizQuestion } from './quizQuestion';
 import { QuizQuestionsService } from './quiz-questions.service';
@@ -13,7 +14,7 @@ import { QuizQuestionsService } from './quiz-questions.service';
   selector: 'birdid-quiz',
   templateUrl: 'app/quiz.component.html',
   styleUrls: ['app/quiz.component.css'],
-  directives: [AutoGrowDirective, QuizMediaComponent],
+  directives: [AutoGrowDirective, QuizMediaComponent, QuizSumbitResultComponent],
   providers: [
       QuizQuestionsService
   ]
