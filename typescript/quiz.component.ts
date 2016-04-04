@@ -11,6 +11,9 @@ import { QuizQuestionsService } from './quiz-questions.service';
 
 import { ReversePipe } from './reverse.pipe';
 
+import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
+
 //import {UnlessDirective} from './unless.directive';
 
 @Component({
@@ -44,6 +47,10 @@ export class QuizComponent implements OnInit {
 
     quizQuestions = [];
 
+    quizLoaded = false;
+
+    questionNumber = 0;
+
 
     constructor(
       private _quizQuestionsService: QuizQuestionsService,
@@ -62,10 +69,24 @@ export class QuizComponent implements OnInit {
 		}
 
 
-        //this._quizQuestionsService.getQuizQuestions().then(this.questionsLoaded);
-        this._quizQuestionsService.getQuizQuestions().then(quizQuestions => this.quizQuestions = quizQuestions);
+        this._quizQuestionsService.getQuizQuestions()
+            .subscribe(
+                data => {
+                    console.log(data);
+                    this.quizQuestions = data;
+                    this.startQuiz();
+                },
+                error => console.error("getQuizQuestions ERROR! ", error)
+            )
 
-        console.log("quizQuestions: ", this.quizQuestions);
+
+
+        //this._quizQuestionsService.getQuizQuestions().then(this.questionsLoaded);
+        //this._quizQuestionsService.getQuizQuestions().then(quizQuestions => this.quizQuestions = quizQuestions);
+        //this._quizQuestionsService.getQuizQuestions().then(quizQuestions => this.questionsLoaded);
+
+
+        console.log("quizQuestions000: ", this.quizQuestions);
 
 
         this.mediaID = 6028;
@@ -74,12 +95,23 @@ export class QuizComponent implements OnInit {
 
     }
 
-    //not working? THIS IS NULL!
-    questionsLoaded(aruments:QuizQuestion[]){
 
-        console.log(this);
-        //this.quizQuestions = aruments;
-        console.log("quizQuestions2: ", aruments);
+    startQuiz(){
+
+        console.log("starting quiz!!!", this.quizQuestions['mediaArray'][0]['media_id']);
+
+
+        this.mediaID = this.quizQuestions['mediaArray'][this.questionNumber]['media_id'];
+
+        this.quizLoaded = true;
+
+    }
+
+    nextQuestion(){
+
+        this.questionNumber ++;
+        this.mediaID = this.quizQuestions['mediaArray'][this.questionNumber]['media_id'];
+
 
     }
 
