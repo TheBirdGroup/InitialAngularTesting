@@ -7,6 +7,13 @@
 <div *ngIf="quizLoaded">
 	<birdid-quiz-media [usingMediaID]="mediaID" (mediaLoadedEvent)="mediaLoadedMessage = $event"></birdid-quiz-media>
 	<br>
+
+	What bird is it?
+	<div *ngFor="#current of questionAlternatives; #i=index" >
+		<button (click)="checkIfAltCorrect(i)">{{current}} </button><br />
+	</div>
+	<br>
+
 	<button (click)="nextQuestion()">Next Question</button> (current: {{mediaID}})
 </div>
 

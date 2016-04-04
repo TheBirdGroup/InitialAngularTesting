@@ -49,10 +49,10 @@ export class QuizMediaComponent implements OnInit {
     changeImage(){
 
 
-        console.log("changing image");
+        //console.log("changing image");
         //this.imageURL = "images/testMedia2.jpg";
         //this.imageURL = "https://hembstudios.no//birdid/IDprogram/getMedia.php?token="+Math.random();
-        this.imageURL = "https://hembstudios.no//birdid/IDprogram/getMedia.php?mediaID="+this.mediaID;
+        //this.imageURL = "https://hembstudios.no//birdid/IDprogram/getMedia.php?mediaID="+this.mediaID;
 
         this.emitMediaLoaded();
 
