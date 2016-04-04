@@ -14,6 +14,8 @@ export class QuizMediaComponent implements OnInit {
 
     imageURL = "";
 
+    imageURLStart = "https://hembstudios.no//birdid/IDprogram/getMedia.php?mediaID=";
+
     mediaID = 0;
 
     mediaLoadedEvent = new EventEmitter<string>();
