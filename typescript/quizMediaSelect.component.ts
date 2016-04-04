@@ -38,12 +38,12 @@ export class QuizMediaSelectComponent implements OnInit {
 
     gotoMediaType(mediaType) {
         console.log(mediaType);
-        // let link = ['QuizComponent', { id: mediaType }];
-        // this._router.navigate(link);
+        let link = ['Quiz', { id: mediaType }];
+        this._router.navigate(link);
 
 
         //PROBLEM EXPLANED: https://github.com/angular/angular/issues/4490
-        this._router.navigateByUrl(`mediaType/${mediaType}`);
+        //this._router.navigateByUrl(`mediaType/${mediaType}`);
 
         //this._router.navigate( ['QuizComponent/', { id: mediaType }] );
     }

@@ -25,6 +25,10 @@ import { ReversePipe } from './reverse.pipe';
 })
 export class QuizComponent implements OnInit {
 
+	statefullPipeOutput = new Promise((resolve, reject) => {
+		setTimeout(() => resolve('Data is here!'), 1500);
+	})
+
 	someValue = 0;
 
     mediaID = 0;
@@ -39,6 +43,7 @@ export class QuizComponent implements OnInit {
     mediaLoadedMessage = "Not loaded";
 
     quizQuestions = [];
+
 
     constructor(
       private _quizQuestionsService: QuizQuestionsService,
@@ -57,8 +62,8 @@ export class QuizComponent implements OnInit {
 		}
 
 
-        this._quizQuestionsService.getQuizQuestions().then(this.questionsLoaded);
-        //this._quizQuestionsService.getQuizQuestions().then(quizQuestions => this.quizQuestions = quizQuestions);
+        //this._quizQuestionsService.getQuizQuestions().then(this.questionsLoaded);
+        this._quizQuestionsService.getQuizQuestions().then(quizQuestions => this.quizQuestions = quizQuestions);
 
         console.log("quizQuestions: ", this.quizQuestions);
 
