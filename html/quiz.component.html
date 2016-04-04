@@ -1,12 +1,20 @@
 <h3>You have mediaType {{mediaTypeID}}, andf the quiz for it YOLO:</h3>
 
+<p>
+	Reverse pipe is cool: {{'My name is Greger' | myReverse}}
+</p>
+
+Template form: <br>
+<birdid-quiz-submit-result></birdid-quiz-submit-result>
+<br>
+Data driven form:<br>
+<birdid-quiz-submit-resultDD></birdid-quiz-submit-resultDD>
+
 
 {{mediaLoadedMessage}}<br>
 <birdid-quiz-media [usingMediaID]="mediaID" (mediaLoadedEvent)="mediaLoadedMessage = $event"></birdid-quiz-media>
 
 
-
-<birdid-quiz-submit-result></birdid-quiz-submit-result>
 
 
 

@@ -5,7 +5,7 @@ import { Router, RouteParams } from 'angular2/router';
 @Component({
   selector: 'birdid-quiz-submit-result',
   templateUrl: 'app/quiz-submit-result.component.html',
-  styleUrls: ['app/hero-detail.component.css'],
+  styleUrls: ['app/quiz-submit-result.component.css'],
   directives: []
 })
 export class QuizSumbitResultComponent implements OnInit {

@@ -1,15 +1,18 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+<form (ngSubmit)="onSubmit(form	)" #form="ngForm" >
 	<br>
 	<lable for="email">Email</lable><br>
-	<input ngControl="email" type="text" id="email" required>
+	<input ngControl="email" type="text" id="email" #email="ngForm" required>
+	<span class="notValid" *ngIf="!email.valid">Not Valid</span>
 	<br>
 	<lable for="name">Name</lable><br>
-	<input ngControl="name" type="text" id="name" required>
+	<input ngControl="name" type="text" id="name" #name="ngForm"  required>
+	<span class="notValid" *ngIf="!name.valid">Not Valid</span>
 	<br>
 	<lable for="score">Score</lable><br>
-	<input ngControl="score" type="text" id="score" required>
+	<input ngControl="score" type="text" id="score" #score="ngForm"  required>
+	<span class="notValid" *ngIf="!score.valid">Not Valid</span>
 	<br>
-	<button type="submit">Submit</button>
+	<button type="submit" [disabled]="!form.valid" >Submit</button>
 	<br>
 	{{formInformation | json}}
 	<br>

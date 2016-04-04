@@ -1,0 +1,19 @@
+<form [ngFormModel]="myForm" (ngSubmit)="onSubmit()" >
+	<br>
+	<lable for="email">Email</lable><br>
+	<input [ngFormControl]="myForm.controls['email']" type="text" id="email" #mail="ngForm">
+	<span class="notValid" *ngIf="!mail.valid" >Not Valid</span>
+	<br>
+	<lable for="name">Name</lable><br>
+	<input [ngFormControl]="myForm.controls['name']" type="text" id="name" #name="ngForm">
+	<span class="notValid" *ngIf="!name.valid">Not Valid</span>
+	<br>
+	<lable for="score">Score</lable><br>
+	<input [ngFormControl]="myForm.controls['score']" type="text" id="score" #score="ngForm">
+	<span class="notValid" *ngIf="!score.valid">Not Valid</span>
+	<br>
+	<button type="submit" [disabled]="!myForm.valid">Submit</button>
+	<br>
+	{{formInformation | json}}
+	<br>
+</form>
