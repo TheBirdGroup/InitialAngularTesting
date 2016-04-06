@@ -5,6 +5,7 @@ var assetsProd = '';
 
 var appDev = 'typescript/';
 var appcss = 'css/';
+var appScss = 'scss/';
 var apphtml = 'html/';
 var appProd = 'app/';
 
